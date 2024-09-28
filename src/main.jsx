@@ -2,8 +2,6 @@ import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { createBrowserRouter, Navigate, RouterProvider } from "react-router-dom";
 
-// PROVIDER
-import Provider from "./Provider.jsx";
 // BOOTSTRAP
 import "bootstrap/dist/css/bootstrap.min.css";
 // COMPONENTS
@@ -18,8 +16,6 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById("root")).render(
 	<StrictMode>
-		<Provider>
-			<RouterProvider router={router} />
-		</Provider>
+		<RouterProvider router={router} />
 	</StrictMode>
 );
