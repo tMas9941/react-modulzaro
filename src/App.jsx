@@ -13,11 +13,16 @@ export default function App() {
 	const usedQuestions = useRef([]);
 
 	const getQuestions = async () => {
-		const response = await fetch(`http://localhost:5000/questions`, {
-			method: "GET",
-		});
+		let response;
+		try {
+			response = await fetch(`http://localhost:5000/questions`, {
+				method: "GET",
+			});
+		} catch (error) {
+			console.error("Failed connecting to server " + error);
+			return;
+		}
 		const data = await response.json();
-
 		setAllQuestions(data);
 	};
 
